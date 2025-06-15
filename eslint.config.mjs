@@ -9,6 +9,14 @@ const compat = new FlatCompat({
     baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier')];
+const eslintConfig = [
+    ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+    {
+        rules: {
+            "no-unused-vars": "warn",
+            "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
+        },
+    },
+];
 
 export default eslintConfig;
