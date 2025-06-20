@@ -1,5 +1,5 @@
 import { menuList } from '@/constants';
-import Image from 'next/image';
+import { ImageKit } from '../ImageKit';
 import Link from 'next/link';
 
 export const LeftBar = () => {
@@ -9,7 +9,7 @@ export const LeftBar = () => {
                 {/* Logo */}
                 <div className='logo'>
                     <Link href='/' className='hover:bg-borderGray inline-block rounded-full p-2'>
-                        <Image src='icons/logo.svg' alt='Logo' width={24} height={24} className='' />
+                        <ImageKit path='icons/logo.svg' alt='Logo' w={24} h={24} />
                     </Link>
                 </div>
 
@@ -20,7 +20,7 @@ export const LeftBar = () => {
                             <li key={item.id}>
                                 <Link href={item.link} className='group transition duration-300 ease-in-out'>
                                     <div className='group-hover:bg-borderGray flex items-center gap-3 rounded-full px-3 py-2 lg:mr-10'>
-                                        <Image src={`icons/${item.icon}`} alt={item.name} width={24} height={24} />
+                                        <ImageKit path={`icons/${item.icon}`} alt={item.name} w={24} h={24} />
                                         <span className='hidden text-lg font-semibold lg:inline-block'>
                                             {item.name}
                                         </span>
@@ -37,7 +37,7 @@ export const LeftBar = () => {
                         href='/'
                         className='flex h-14 w-14 items-center justify-center rounded-full bg-white p-4 text-black transition duration-100 ease-in-out hover:bg-gray-100 lg:hidden'
                     >
-                        <Image src='icons/post.svg' alt='Post' width={24} height={24} />
+                        <ImageKit path='icons/post.svg' alt='Post' w={24} h={24} />
                         {/* <span className='text-lg font-bold'>Post</span> */}
                     </Link>
 
@@ -55,13 +55,7 @@ export const LeftBar = () => {
             <div className='mb-4 flex items-center justify-between rounded-full py-2 lg:gap-4'>
                 <div className='flex items-center lg:gap-2'>
                     <div className='h-10 w-10 rounded-full'>
-                        <Image
-                            src='/general/avatar.png'
-                            alt='akash dev'
-                            className='rounded-full'
-                            width={100}
-                            height={100}
-                        />
+                        <ImageKit path='/general/avatar.png' alt='akash dev' className='rounded-full' w={40} h={40} />
                     </div>
                     <div className='hidden lg:block'>
                         <span className='font-bold'>Akash Dev</span>
