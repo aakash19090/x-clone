@@ -11,5 +11,6 @@
     "trailingComma": "all",
     "importOrderTypeScriptVersion": "5.0.0",
     "tailwindFunctions": ["clsx"],
+    "plugins": ["prettier-plugin-tailwindcss"],
     "tailwindConfig": "./tailwind.config.mjs"
 }
