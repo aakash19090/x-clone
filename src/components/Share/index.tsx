@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ImageKit } from '../ImageKit';
@@ -14,8 +14,9 @@ export type MediaSettingsType = {
 export const Share = () => {
     const [newPostMedia, setNewPostMedia] = useState<File | null>(null);
     const [isEditorOpen, setIsEditorOpen] = useState(false);
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [mediaSettings, setMediaSettings] = useState<MediaSettingsType>({
-        type: 'orignal',
+        type: 'original',
         sensitive: false,
     });
 
