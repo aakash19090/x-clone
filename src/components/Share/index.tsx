@@ -7,7 +7,7 @@ import { ShareNewPost } from '@/actions';
 import { ImageEditor } from '@/components/ImageEditor';
 
 export type MediaSettingsType = {
-    type: 'orignal' | 'square' | 'wide';
+    type: 'original' | 'square' | 'wide';
     sensitive: boolean;
 };
 
@@ -27,7 +27,17 @@ export const Share = () => {
         }
     };
 
-    const previewUrl = newPostMedia ? URL.createObjectURL(newPostMedia) : null;
+    useEffect(() => {
+        if (newPostMedia) {
+            const objectUrl = URL.createObjectURL(newPostMedia);
+            setPreviewUrl(objectUrl);
+            return () => {
+                URL.revokeObjectURL(objectUrl);
+            };
+        } else {
+            setPreviewUrl(null);
+        }
+    }, [newPostMedia]);
 
     return (
         <form className='border-borderGray border-t p-4' action={ShareNewPost}>

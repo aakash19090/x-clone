@@ -1,7 +1,6 @@
 'use server';
 
-import { upload } from '@imagekit/next';
-import { getUploadAuthParams } from '@imagekit/next/server';
+// Removed unused imports
 
 import ImageKit from 'imagekit';
 
